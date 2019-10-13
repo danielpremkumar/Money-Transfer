@@ -1,20 +1,13 @@
 package com.nerdylegend.repository.implementation;
 
-import com.nerdylegend.model.Account;
+import com.nerdylegend.model.Transaction;
 import com.nerdylegend.repository.TransactionRepository;
-import org.joda.money.Money;
+
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.LinkedBlockingQueue;
 
 public class TransactionRepositoryImpl implements TransactionRepository {
 
-    public boolean withdraw(Account account, Money money) {
-        return false;
-    }
+    private final BlockingQueue<Transaction> transactions = new LinkedBlockingQueue<>();
 
-    public boolean deposit(Account account, Money money) {
-        return false;
-    }
-
-    public boolean transfer(Account account, Money money, long beneficiary) {
-        return false;
-    }
 }
