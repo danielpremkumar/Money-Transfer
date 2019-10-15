@@ -13,9 +13,11 @@ public interface AccountRepository {
     Optional<Account> getAccount(String accountNumber);
     void deleteAccount(String accountNumber);
     List<Account> getAll();
+    void deleteAllAccount();
 
     //Transactions
     void withdraw(Account account, Money money);
     boolean deposit(Account account, Money money);
     boolean transfer(Account account, Money money, String beneficiary);
+
 }

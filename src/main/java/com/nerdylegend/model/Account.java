@@ -27,16 +27,8 @@ public class Account {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getAccountNumber() {
         return accountNumber;
-    }
-
-    public void setAccountNumber(String accountNumber) {
-        this.accountNumber = accountNumber;
     }
 
     public Money getBalance() {
@@ -45,14 +37,6 @@ public class Account {
 
     public void setBalance(Money balance) {
         this.balance = balance;
-    }
-
-    public LocalDateTime getCreationDate() {
-        return creationDate;
-    }
-
-    public void setCreationDate(LocalDateTime creationDate) {
-        this.creationDate = creationDate;
     }
 
     @JsonGetter("balance")
@@ -65,13 +49,4 @@ public class Account {
         return creationDate.toLocalDate().toString();
     }
 
-    @Override
-    public String toString() {
-        return "Account{" +
-                "name='" + name + '\'' +
-                ", accountNumber=" + accountNumber +
-                ", balance=" + balance.getAmount() +
-                ", creationDate=" + creationDate.toLocalDate() +
-                '}';
-    }
 }

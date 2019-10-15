@@ -27,7 +27,7 @@ public class ValidationHelper {
     }
 
     private static boolean accountHasSufficientBalance(BigDecimal amount, Account account) {
-        return (amount != null && account.getBalance().getAmount().compareTo(amount) > 0);
+        return (amount != null && account.getBalance().getAmount().compareTo(amount) >= 0);
     }
 
     public static boolean validateDeposit(BigDecimal amount, CurrencyUnit currencyCode, Account account) {

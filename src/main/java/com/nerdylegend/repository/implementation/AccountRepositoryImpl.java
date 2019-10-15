@@ -40,6 +40,11 @@ public class AccountRepositoryImpl implements AccountRepository {
     }
 
     @Override
+    public void deleteAllAccount() {
+        accounts.clear();
+    }
+
+    @Override
     public void withdraw(Account account, Money money) {
         account.setBalance(account.getBalance().minus(money));
     }

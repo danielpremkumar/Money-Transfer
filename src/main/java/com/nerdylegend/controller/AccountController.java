@@ -3,9 +3,7 @@ package com.nerdylegend.controller;
 import com.nerdylegend.helper.ValidationHelper;
 import com.nerdylegend.model.Account;
 import com.nerdylegend.repository.AccountRepository;
-import com.nerdylegend.repository.TransactionRepository;
 import com.nerdylegend.repository.implementation.AccountRepositoryImpl;
-import com.nerdylegend.repository.implementation.TransactionRepositoryImpl;
 import io.vertx.reactivex.ext.web.RoutingContext;
 import org.joda.money.CurrencyUnit;
 import org.joda.money.Money;
@@ -21,7 +19,6 @@ public class AccountController {
     private static final String ACCOUNT_DELETED = "account with accountNumber %s deleted";
 
     private final AccountRepository accountRepository = new AccountRepositoryImpl();
-    private final TransactionRepository transactionRepository = new TransactionRepositoryImpl();
 
     public void createAccount(RoutingContext routingContext) {
         String userName = routingContext.request().getParam("name");
@@ -111,5 +108,10 @@ public class AccountController {
 
     public void getAll(RoutingContext routingContext) {
         ValidationHelper.constructJsonResponse(routingContext, 200, accountRepository.getAll());
+    }
+
+    public void deleteAll(RoutingContext routingContext) {
+        accountRepository.deleteAllAccount();
+        ValidationHelper.constructTextResponse(routingContext, 200, "All Account Deleted");
     }
 }

@@ -19,7 +19,7 @@ public class App {
         startServer(vertx, httpServer, SERVER_PORT);
     }
 
-    static synchronized void startServer(Vertx vertx, HttpServer httpServer, Integer serverPort) {
+    public static synchronized void startServer(Vertx vertx, HttpServer httpServer, Integer serverPort) {
         Router router = Router.router(vertx);
         router
                 .route("/account*")
@@ -27,6 +27,9 @@ public class App {
         router
                 .get("/account")
                 .handler(accountController::getAll);
+        router
+                .delete("/account")
+                .handler(accountController::deleteAll);
         router
                 .post("/account")
                 .handler(accountController::createAccount);
@@ -55,7 +58,7 @@ public class App {
     }
 
     private static void logExceptions(Throwable throwable) {
-        LOG.error("Exception Occurred: ",throwable);
+        LOG.error("Exception Occurred: ", throwable);
     }
 }
 
