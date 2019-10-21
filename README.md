@@ -1,4 +1,4 @@
-# Money-Transfer 
+# Money-Transfer [![Build Status](https://travis-ci.org/nerdylegend/Money-Transfer.svg?branch=master)](https://travis-ci.org/nerdylegend/Money-Transfer)
  Rest  Api to transfer money between bank accounts
 
 Building and running the application
