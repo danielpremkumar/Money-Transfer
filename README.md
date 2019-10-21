@@ -1,5 +1,5 @@
 # Money-Transfer 
- Rest  Api to transfer between bank accounts
+ Rest  Api to transfer money between bank accounts
 
 Building and running the application
 ------------------------------------
